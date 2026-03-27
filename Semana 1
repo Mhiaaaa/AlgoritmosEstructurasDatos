@@ -1,0 +1,9 @@
+Introduccion e algoritmos y esructuras de datos:
+Las estructuras de datos organizan la información y afectan la eficiencia del programa; elegir la adecuada mejora operaciones como búsqueda e inserción, siendo las no lineales útiles para problemas complejos.
+Las computadoras guardan información en forma de bits y bytes, y las estructuras de datos ayudan a ordenarla para que sea más fácil usarla.
+Los tipos las más comunes las estáticas y dinámicas. Estas a su vez se dividen en lineales y no lineales.
+Estaticas:
+Las estructuras de datos estáticas tienen un tamaño fijo que se define al inicio del programa y no cambia mientras se ejecuta.
+-Arrays:Una colección de elementos(indice o clave)
+-Matrices:extensión de los arrays en más de una dimensión
+1. Estructuras lineales:
