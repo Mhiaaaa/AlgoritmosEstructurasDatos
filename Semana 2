@@ -1,0 +1,16 @@
+Estructura de datos estaticas:
+Son estructuras que su tamaño se define al inicio y no cambia durante 
+que se ejecuta el programa. ejemplo:el arreglo(vector)
+1. Por que los arreglos son utiles?
+-guardan datos del mismo tipo
+-son simples de recorrer y operar
+-puedes llegar a culaquier posicion con su indice
+PERO.. no es facil insertar o eliminiar elementos
+2. porque se dice que es estatico?
+porque cuando creas el arreglo, defines su tamaño y ese tamaño ya no cambia
+3. como funcionan?
+actualizar:vas al indice y cambias el valor
+recorrer: con un bucle lees todo
+copiar: copias elemento por elemento
+insertar: tienens que mover varios elementos hacia la derecha para hacer espacio
+eliminar: mueves los elementos ala izquierda para tapar espacio
