@@ -1,0 +1,103 @@
+public class Ejercicio 
+{
+// Método para comparar arreglos
+    public static boolean compararArreglos(int[] a, int[] b) {
+        if (a.length != b.length) return false;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) return false;
+        }
+        return true;
+    }
+
+    // Método para clonar un arreglo
+    public static int[] clonarArreglo(int[] original) {
+        int[] copia = new int[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            copia[i] = original[i];
+        }
+        return copia;
+    }
+
+    // Método para fusionar arreglos
+    public static int[] fusionarArreglos(int[] a, int[] b) {
+        int[] fusion = new int[a.length + b.length];
+
+        for (int i = 0; i < a.length; i++) {
+            fusion[i] = a[i];
+        }
+
+        for (int i = 0; i < b.length; i++) {
+            fusion[a.length + i] = b[i];
+        }
+
+        return fusion;
+    }
+
+    // Método para mostrar un arreglo
+    public static void mostrarArreglo(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        int[] arreglo1 = {1, 2, 3, 4};
+        int[] arreglo2 = {1, 2, 3, 4};
+
+        // Comparación
+        System.out.println("¿Los arreglos son iguales? " + compararArreglos(arreglo1, arreglo2));
+
+        // Clonación
+        int[] clon = clonarArreglo(arreglo1);
+        clon[0] = 99;
+
+        System.out.println("Arreglo original:");
+        mostrarArreglo(arreglo1);
+
+        System.out.println("Arreglo clonado modificado:");
+        mostrarArreglo(clon);
+
+        // Fusión
+        int[] fusion = fusionarArreglos(arreglo1, arreglo2);
+
+        System.out.println("Arreglo fusionado:");
+        mostrarArreglo(fusion);
+    }
+}
+
+
+“En este ejercicio realicé un programa en Java llamado Ejercicio, donde trabajo
+con arreglos unidimensionales y aplico tres operaciones importantes: comparación, clonación y fusión.”
+
+1.Comparación de arreglos
+
+“Primero hice un método para comparar dos arreglos.
+Este método revisa si ambos tienen el mismo tamaño y luego compara elemento por elemento.
+Si todos los datos coinciden, el método devuelve true, lo que significa que los arreglos son iguales.
+Si encuentra una diferencia, devuelve false.
+Esto sirve para verificar si dos listas de datos son exactamente iguales.”
+
+2.Clonación de arreglos
+
+“Después implementé la clonación.
+Aquí lo que hago es crear un nuevo arreglo y copiar todos los valores del arreglo original.
+La idea es tener una copia independiente.
+En el programa modifico el arreglo clonado para demostrar que el arreglo original no cambia,
+comprobando que realmente es una copia.”
+
+3.“Luego realicé la fusión de arreglos.
+Para esto, creo un arreglo más grande que pueda contener los elementos de los dos arreglos.
+Primero copio los elementos del primer arreglo y luego los del segundo.
+Así obtengo un nuevo arreglo que contiene todos los datos juntos.”
+
+4.Método para mostrar
+“También agregué un método para mostrar los arreglos en pantalla, lo que permite ver claramente los resultados de cada operación.”
+
+✅ Conclusión
+
+“Con este programa demuestro cómo se pueden manipular arreglos aplicando comparación, 
+clonación y fusión, entendiendo cómo recorrerlos y cómo trabajar con copias y combinaciones de datos.”
