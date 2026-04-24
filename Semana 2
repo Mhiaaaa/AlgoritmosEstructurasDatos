@@ -1,7 +1,35 @@
-Estructura de datos estaticas:
-Son estructuras que su tamaño se define al inicio y no cambia durante 
-que se ejecuta el programa. ejemplo:el arreglo(vector)
-1. Por que los arreglos son utiles?
+Estructura de datos estáticas:
+son formas de organizar datos donde ya sabes cuántos elementos vas a manejar 
+desde el principio, como un arreglo con tamaño fijo. Son rápidas y fáciles de usar,
+pero poco flexibles si necesitas agregar o quitar datos más adelante.ejemplo:el arreglo(vector)
+
+INSERCIÓN : 
+consiste en colocar un elemento en una posición determinada (al inicio, en medio o al final). 
+En estructuras estáticas, como los arreglos, esto puede implicar mover otros elementos
+para hacer espacio, ya que el tamaño es fijo.es el proceso de agregar un nuevo dato dentro de
+una estructura de datos.
+ACTUALIZACIÓN:
+ es el proceso de modificar o cambiar el valor de un dato que ya existe dentro de una estructura.
+Consiste en reemplazar un elemento por otro en la misma posición, 
+sin cambiar el tamaño de la estructura, solo su contenido
+
+ELIMINACIÓN: 
+ es el proceso de quitar un dato de una estructura de datos.
+En palabras simples: consiste en borrar un elemento de una posición determinada.
+En estructuras estáticas, como los arreglos, esto puede implicar mover los elementos 
+restantes para llenar el espacio que quedó vacío
+
+ RECORRIDO:
+Es el proceso de revisar todos los elementos de una estructura de datos,
+pasando uno por uno desde el inicio hasta el final para realizar acciones como mostrar,
+buscar o modificar la información.
+
+COPIA:
+La copia es el proceso de duplicar los datos de una estructura en otra. 
+En palabras simples, consiste en crear una nueva estructura con los mismos
+elementos que la original, manteniendo la misma información sin modificarla.
+
+Por que los arreglos son utiles?
 -guardan datos del mismo tipo
 -son simples de recorrer y operar
 -puedes llegar a culaquier posicion con su indice
@@ -14,3 +42,43 @@ recorrer: con un bucle lees todo
 copiar: copias elemento por elemento
 insertar: tienens que mover varios elementos hacia la derecha para hacer espacio
 eliminar: mueves los elementos ala izquierda para tapar espacio
+ a continuacion un ejemplo 
+public class EstructuraEstatica {
+    public static void main(String[] args) {
+        // Crear un arreglo (estructura estática)
+        int[] datos = new int[5];
+        // INSERCIÓN
+        datos[0] = 10;
+        datos[1] = 20;
+        datos[2] = 30;
+
+        System.out.println("Después de insertar:");
+        recorrer(datos);
+        // ACTUALIZACIÓN
+        datos[1] = 25; // cambiamos 20 por 25
+        System.out.println("\nDespués de actualizar:");
+        recorrer(datos);
+        // ELIMINACIÓN (simulada moviendo elementos)
+        int posicionEliminar = 1;
+        for (int i = posicionEliminar; i < datos.length - 1; i++) {
+            datos[i] = datos[i + 1];
+        }
+        datos[datos.length - 1] = 0; // limpiar último espacio
+        System.out.println("\nDespués de eliminar:");
+        recorrer(datos);
+        // COPIA
+        int[] copia = new int[datos.length];
+        for (int i = 0; i < datos.length; i++) {
+            copia[i] = datos[i];
+        }
+System.out.println("\nCopia del arreglo:");
+        recorrer(copia);
+    }
+    // RECORRIDO
+    public static void recorrer(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " ");
+        }
+        System.out.println();
+    }
+}
