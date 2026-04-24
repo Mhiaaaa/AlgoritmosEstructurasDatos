@@ -15,8 +15,75 @@ Tipos de estructuras de datos:
 1.Estáticas
 Tienen un tamaño fijo desde el inicio.
 Si necesitas más espacio, no se puede ampliar fácilmente.
-Ejemplo típico: arreglos.
+Las estructuras de datos estáticas están directamente relacionadas con los arrays (arreglos)
+y las matrices, porque ambos son ejemplos de este tipo de estructura.
+Un array es una estructura estática unidimensional, es decir,
+almacena varios datos del mismo tipo en una sola fila y con un tamaño fijo. 
+Por su parte, una matriz es una extensión del array, pero bidimensional, ya
+que organiza los datos en filas y columnas, formando una tabla.
+En palabras simples: los arrays y las matrices son estructuras de 
+datos estáticas porque su tamaño no cambia, y se usan para guardar y
+organizar datos de forma fija en memoria.
+ESTRUCTURA DE DATOS DINAMICAS LINEALES:
+son aquellas que pueden cambiar de tamaño durante la ejecución del programa
+y que almacenan los datos en una secuencia lineal es decir, uno detrás de otro.
+En palabras simples: son estructuras que pueden crecer o reducirse según se necesite, 
+sin un tamaño fijo, y los elementos están organizados en línea.
+Ejemplos comunes son la lista enlazada, la pila y la cola que permiten agregar 
+o eliminar elementos fácilmente mientras el programa está en funcionamiento.
+
+ESTRUCTURA DE DATOS DINAMICAS LINEALES
+Son aquellas que pueden cambiar de tamaño mientras el programa se está ejecutando y 
+en las que los elementos se organizan de forma lineal (uno después de otro).
+En palabras simples: son estructuras que no tienen un tamaño fijo, 
+pueden crecer o reducirse según lo que se necesite, y los datos se
+guardan en una secuencia ordenada.
+Ejemplos de este tipo de estructuras son la lista enlazada,
+la pila y la cola que permiten agregar y eliminar elementos 
+de manera flexible durante la ejecución del programa.
+
+ESTRUCTURAS DE DATOS DINAMICAS NO LINEALES:
+son aquellas que pueden cambiar de tamaño durante la ejecución del programa y en las
+que los datos no están organizados en una sola secuencia sino en forma de ramas o conexiones
+En palabras simples: son estructuras donde los elementos no van uno detrás de otro en línea, 
+sino que se conectan de diferentes maneras, formando como una “red” o “árbol”.
+Ejemplos de este tipo de estructuras son los árboles y los grafos
+que se usan para representar relaciones más complejas entre los datos.
+
 -Lineales estáticas
 Arreglos (arrays) → los datos van uno tras otro en una sola línea.
 -No lineales estáticas
 Matrices → datos en forma de tabla (filas y columnas) con tamaño fijo.
+
+ejemplo:
+
+class Nodo {
+    int valor;
+    Nodo izquierdo;
+    Nodo derecho;
+    public Nodo(int valor) {
+        this.valor = valor;
+        this.izquierdo = null;
+        this.derecho = null;
+    }
+}
+public class ArbolSimple {
+    public static void main(String[] args) {
+        // CREACIÓN DEL ÁRBOL (estructura dinámica no lineal)
+        Nodo raiz = new Nodo(10);
+        raiz.izquierdo = new Nodo(5);
+        raiz.derecho = new Nodo(15);
+        raiz.izquierdo.izquierdo = new Nodo(2);
+        raiz.izquierdo.derecho = new Nodo(7);
+        System.out.println("Recorrido del árbol:");
+        recorrer(raiz);
+    }
+    // RECORRIDO (preorden)
+    public static void recorrer(Nodo nodo) {
+        if (nodo != null) {
+            System.out.print(nodo.valor + " ");
+            recorrer(nodo.izquierdo);
+            recorrer(nodo.derecho);
+        }
+    }
+}
