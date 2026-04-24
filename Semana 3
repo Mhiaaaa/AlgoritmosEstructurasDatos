@@ -1,1 +1,86 @@
-jdjdjjd
+OPERACIONES CON ARREGLOS UNIDIMENSIONALES:
+son los procesos que permiten trabajar con los datos dentro del arreglo, 
+como agregar (inserción), modificar (actualización), eliminar, recorrer y 
+copiar elementos, para poder organizar y manipular la información de manera eficiente.
+
+COMPARACION DE ARREGLOS:
+La comparación de arreglos es el proceso de verificar si dos arreglos son iguales o diferentes.
+En palabras simples: consiste en revisar elemento por elemento para ver si tienen los mismos 
+valores en las mismas posiciones. Si todo coincide, los arreglos son iguales; si hay alguna 
+diferencia, entonces no lo son
+
+CLONACION DE ARREGLOS:
+es el proceso de crear una copia exacta de un arreglo.
+ consiste en duplicar todos los elementos de un arreglo en otro nuevo,
+de modo que ambos tengan los mismos valores, pero sean independientes 
+(lo que cambie en uno no afecta al otro)
+
+FUSION DE ARREGLOS:
+La fusión de arreglos es el proceso de unir dos o más arreglos en uno solo.
+consiste en juntar los elementos de varios arreglos dentro
+de un nuevo arreglo, colocándolos uno después del otro para formar una sola lista más grande
+
+ejemplo:
+public class OperacionesAvanzadasArreglos {
+    public static void main(String[] args) {
+        // Arreglos de ejemplo
+        int[] arreglo1 = {10, 20, 30};
+        int[] arreglo2 = {10, 20, 30};
+        int[] arreglo3 = {40, 50, 60};
+        // COMPARACIÓN DE ARREGLOS
+        boolean iguales = comparar(arreglo1, arreglo2);
+        System.out.println("¿arreglo1 y arreglo2 son iguales? " + iguales);
+        // CLONACIÓN DE ARREGLOS
+        int[] copia = clonar(arreglo1);
+        System.out.print("Copia de arreglo1: ");
+        recorrer(copia);
+        // FUSIÓN DE ARREGLOS
+        int[] fusion = fusionar(arreglo1, arreglo3);
+        System.out.print("Fusión de arreglo1 y arreglo3: ");
+        recorrer(fusion);
+    }
+    // COMPARACIÓN
+    public static boolean comparar(int[] a, int[] b) {
+        if (a.length != b.length) {
+            return false;
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    // CLONACIÓN
+    public static int[] clonar(int[] original) {
+        int[] copia = new int[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            copia[i] = original[i];
+        }
+        retrn copia;
+    }
+    // FUSIÓN
+    public static int[] fusionar(int[] a, int[] b) {
+        int[] fusion = new int[a.length + b.length];
+        int i = 0;
+        // copiar primer arreglo
+        for (int j = 0; j < a.length; j++) {
+            fusion[i] = a[j];
+            i++;
+        }
+        // copiar segundo arreglo
+        for (int j = 0; j < b.length; j++) {
+            fusion[i] = b[j];
+            i++;
+        }
+        return fusion;
+    }
+    // RECORRIDO
+    public static void recorrer(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " ");
+        }
+        System.out.println();
+    }
+}
