@@ -1,7 +1,122 @@
-Matrices Cuadradas:
-Matrices Triangulares:
+MATRICES CUADRADAS:
+Son arreglos bidimensionales que tienen el mismo número de filas y columnas.
+En palabras simples: son tablas de datos donde la cantidad de filas 
+es igual a la cantidad de columnas (por ejemplo, 3x3, 4x4). 
+Se utilizan para organizar información en forma de cuadrado y
+permiten realizar operaciones como suma, recorrido, diagonal principal, entre otras.
+
+MATRICES TRIANGULARES:
+Las matrices triangulares son matrices cuadradas donde los elementos están organizados
+de forma que solo una parte de la matriz contiene valores diferentes de cero.
+En palabras simples: son matrices donde los números solo se encuentran en una mitad 
+de la tabla, y la otra mitad es cero. Pueden ser triangulares superiores 
+(los valores están arriba de la diagonal principal) o triangulares inferiores 
+(los valores están abajo de la diagonal principal).
+
 1. Matriz triangular inferior
+Es una matriz cuadrada donde los elementos que están encima de la diagonal principal son cero, 
+y los valores importantes se encuentran en la diagonal y debajo de ella.
+Es una tabla en la que solo la parte de abajo (y la diagonal) tiene números,
+mientras que la parte de arriba está llena de ceros.
+
 2. Matriz triangular superior
-Matriz diagonal:
+La matriz triangular superior es una matriz cuadrada en la que todos los
+elementos que están por debajo de la diagonal principal son cero, mientras
+que los valores importantes se encuentran en la diagonal y en la parte 
+superior de la matriz. En palabras simples, es una tabla donde solo la
+parte de arriba (incluida la diagonal) contiene números, y
+la parte de abajo está completamente llena de ceros.
+
+3.Matriz Tridiagonal:
+La matriz tridiagonal es una matriz cuadrada en la que solo pueden tener valores
+distintos de cero la diagonal principal y las dos diagonales que están justo al
+lado de ella (una arriba y otra abajo). El resto de los elementos son cero.
+En palabras simples, es una tabla donde los números importantes solo se encuentran
+en el centro y en las dos líneas cercanas a la diagonal principal,
+mientras que los demás espacios están en cero.
+
+ MATRICES SIMETRICAS Y ASIMETRICAS:
 Matriz Simetrica:
+La matriz simétrica es una matriz cuadrada que es igual a su traspuesta,
+es decir, los elementos se reflejan de la misma forma a ambos lados de la
+diagonal principal. En palabras simples, es una tabla donde los valores de
+un lado de la diagonal son exactamente los mismos que los del otro lado,
+como si estuviera “reflejada en un espejo”
+
 Matriz Asimetrica:
+La matriz asimétrica es una matriz cuadrada que no es igual a su traspuesta, 
+es decir, los elementos no se reflejan de la misma forma a ambos lados de la 
+diagonal principal. En palabras simples, es una tabla donde los valores de un
+lado de la diagonal son diferentes a los del otro lado, por lo que no existe
+un patrón de espejo.
+ ejemplo:
+
+public class TiposDeMatrices {
+    public static void main(String[] args) {
+        int[][] matriz = {
+            {1, 2, 3},
+            {0, 5, 6},
+            {0, 0, 9}
+        };
+        System.out.println("Matriz original:");
+        mostrar(matriz);
+        System.out.println("\n¿Es cuadrada? " + esCuadrada(matriz));
+        System.out.println("¿Es triangular superior? " + esTriangularSuperior(matriz));
+        System.out.println("¿Es triangular inferior? " + esTriangularInferior(matriz));
+        System.out.println("¿Es tridiagonal? " + esTridiagonal(matriz));
+        System.out.println("¿Es simétrica? " + esSimetrica(matriz));
+    }
+    // RECORRIDO
+    public static void mostrar(int[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    // MATRIZ CUADRADA
+    public static boolean esCuadrada(int[][] m) {
+        return m.length == m[0].length;
+    }
+    // TRIANGULAR SUPERIOR
+    public static boolean esTriangularSuperior(int[][] m) {
+        for (int i = 1; i < m.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (m[i][j] != 0) return false;
+            }
+        }
+        return true;
+    }
+    // TRIANGULAR INFERIOR
+    public static boolean esTriangularInferior(int[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = i + 1; j < m.length; j++) {
+                if (m[i][j] != 0) return false;
+            }
+        }
+        return true;
+    }
+    // TRIDIAGONAL
+    public static boolean esTridiagonal(int[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                if (Math.abs(i - j) > 1 && m[i][j] != 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    // SIMÉTRICA
+    public static boolean esSimetrica(int[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                if (m[i][j] != m[j][i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
