@@ -4,7 +4,7 @@ public class ListaEnlazadaSimple {
 
     public Nodo cabeza;
 
-    // ✅ Recorrer
+    //  Recorrer
     public void recorrer() {
         Nodo actual = cabeza;
         while (actual != null) {
@@ -14,7 +14,7 @@ public class ListaEnlazadaSimple {
         System.out.println("null");
     }
 
-    // ✅ Buscar
+    //  Buscar
     public boolean buscar(int valor) {
         Nodo actual = cabeza;
         while (actual != null) {
@@ -24,14 +24,14 @@ public class ListaEnlazadaSimple {
         return false;
     }
 
-    // ✅ Insertar al inicio
+    //  Insertar al inicio
     public void insertarInicio(int dato) {
         Nodo nuevo = new Nodo(dato);
         nuevo.siguiente = cabeza;
         cabeza = nuevo;
     }
 
-    // ✅ Insertar al final
+    //  Insertar al final
     public void insertarFinal(int dato) {
         Nodo nuevo = new Nodo(dato);
 
@@ -47,7 +47,7 @@ public class ListaEnlazadaSimple {
         actual.siguiente = nuevo;
     }
 
-    // ✅ Insertar en posición
+    //  Insertar en posición
     public void insertarEnPosicion(int dato, int pos) {
         if (pos == 0) {
             insertarInicio(dato);
@@ -69,14 +69,14 @@ public class ListaEnlazadaSimple {
         actual.siguiente = nuevo;
     }
 
-    // ✅ Eliminar al inicio
+    //  Eliminar al inicio
     public void eliminarInicio() {
         if (cabeza != null) {
             cabeza = cabeza.siguiente;
         }
     }
 
-    // ✅ Eliminar por valor
+    //  Eliminar por valor
     public void eliminar(int valor) {
         Nodo actual = cabeza, anterior = null;
 
@@ -91,7 +91,7 @@ public class ListaEnlazadaSimple {
         }
     }
 
-    // ✅ Ordenar (burbuja)
+    //  Ordenar (burbuja)
     public void ordenar() {
         if (cabeza == null) return;
 
@@ -112,7 +112,7 @@ public class ListaEnlazadaSimple {
         } while (cambio);
     }
 
-    // ✅ Invertir lista
+    //  Invertir lista
     public void invertir() {
         Nodo anterior = null;
         Nodo actual = cabeza, siguiente;
@@ -138,7 +138,7 @@ public class ListaEnlazadaSimple {
         return false;
     }
 
-    // ✅ Fusionar listas ordenadas
+    //  Fusionar listas ordenadas
     public static ListaEnlazadaSimple fusionar(ListaEnlazadaSimple l1, ListaEnlazadaSimple l2) {
         ListaEnlazadaSimple r = new ListaEnlazadaSimple();
         Nodo n1 = l1.cabeza, n2 = l2.cabeza;
